@@ -1,0 +1,18 @@
+common:
+  hello: Hey yo
+  home: Home
+  model: Model
+  kachaball: Kachaball
+  weapon: Weapon
+  mononofu: Mononofu
+  mononofu3: Mononofu 3
+  mononofu4: Mononofu 4
+  mononofu5: Mononofu 5
+  mononofu6: Mononofu 6
+  mononofu7: Mononofu 7
+  mononofu8: Mononofu 8
+toys:
+  buyPrice: 購買價格
+  currentPrice: 目前價格
+  buyDate: 購買日期
+  updateDate: 更新日期
