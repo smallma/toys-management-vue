@@ -1,5 +1,8 @@
 common:
   hello: 你好
+nav:
+  search: 搜尋
+  add: 新增
   home: 首頁
   model: 模型
   zoids: 洛伊德
@@ -24,6 +27,18 @@ common:
   sango2: 真三國無雙 2
   sango3: 真三國無雙 3
   godzilla: 哥吉拉
+  xplus: XPlus
+add:
+  name: 名稱
+  num: 數量
+  rarity: 稀有度
+  buyDate: 購買日期
+  buyPrice: 購買價格
+  currentPrice: 現在價格
+  tags: 標籤
+  uploadImg: 圖片上傳
+  clickToUpload: 點擊上傳圖片
+  add: 新增
 toys:
   buyPrice: 購買價格
   currentPrice: 目前價格

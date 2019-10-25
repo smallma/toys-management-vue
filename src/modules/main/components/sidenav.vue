@@ -37,62 +37,63 @@
         list: [
           {
             key: '1',
-            title: this.$t('message.common.home'),
-            icon: 'home',
-            href: '/'
+            title: this.$t('message.nav.search'),
+            icon: 'search',
+            href: '/search'
+          },
+          {
+            key: '8',
+            title: this.$t('message.nav.add'),
+            icon: 'plus',
+            href: '/add'
           },
           {
             key: '2',
-            title: this.$t('message.common.model'),
-            icon: 'pie-chart',
-            href: '/zoids',
+            title: this.$t('message.nav.model'),
+            icon: 'ordered-list',
             children: [
               {
                 key: '2.1',
-                title: this.$t('message.common.zoids'),
-                icon: 'pie-chart',
+                title: this.$t('message.nav.zoids'),
+                icon: 'ordered-list',
                 children: [
                   {
                     key: '2.1.1',
-                    title: this.$t('message.common.zoidsKotobukiya'),
-                    icon: 'pie-chart',
+                    title: this.$t('message.nav.zoidsKotobukiya'),
+                    icon: 'caret-right',
                     href: '/zoidsKotobukiya',
 
                   },
                   {
                     key: '2.1.2',
-                    title: this.$t('message.common.zoidsTT'),
-                    icon: 'pie-chart',
+                    title: this.$t('message.nav.zoidsTT'),
+                    icon: 'caret-right',
                     href: '/zoids',
                   }
                 ],
               },
             ],
           },
-          {
-            key: '3',
-            title: this.$t('message.common.kachaball'),
-            icon: 'pie-chart',
-          },
+
           {
             key: '4',
-            title: this.$t('message.common.hako'),
-            icon: 'pie-chart',
+            title: this.$t('message.nav.hako'),
+            icon: 'ordered-list',
             children: [
               {
                 key: '4.1',
-                title: this.$t('message.common.zoids'),
-                icon: 'pie-chart',
+                title: this.$t('message.nav.zoids'),
+                icon: 'ordered-list',
                 children: [
                   {
                     key: '4.1.1',
-                    title: this.$t('message.common.zoidsKotobukiya'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.zoidsKotobukiya'),
+                    icon: 'caret-right'
                   },
                   {
                     key: '4.1.2',
-                    title: this.$t('message.common.zoidsTT'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.zoidsTT'),
+                    icon: 'caret-right'
                   }
                 ],
               },
@@ -100,87 +101,87 @@
           },
           {
             key: '5',
-            title: this.$t('message.common.weapon'),
-            icon: 'pie-chart',
+            title: this.$t('message.nav.weapon'),
+            icon: 'ordered-list',
             children: [
               {
                 key: '5.1',
-                title: this.$t('message.common.mononofu'),
-                icon: 'pie-chart',
+                title: this.$t('message.nav.mononofu'),
+                icon: 'ordered-list',
                 children: [
                   {
                     key: '5.1.1',
-                    title: this.$t('message.common.mononofu3'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.mononofu3'),
+                    icon: 'caret-right'
                   },
                   {
                     key: '5.1.2',
-                    title: this.$t('message.common.mononofu4'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.mononofu4'),
+                    icon: 'caret-right'
                   },
                   {
                     key: '5.1.3',
-                    title: this.$t('message.common.mononofu5'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.mononofu5'),
+                    icon: 'caret-right'
                   },
                   {
                     key: '5.1.4',
-                    title: this.$t('message.common.mononofu6'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.mononofu6'),
+                    icon: 'caret-right'
                   },
                   {
                     key: '5.1.5',
-                    title: this.$t('message.common.mononofu7'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.mononofu7'),
+                    icon: 'caret-right'
                   },
                   {
                     key: '5.1.6',
-                    title: this.$t('message.common.mononofu8'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.mononofu8'),
+                    icon: 'caret-right'
                   }
                 ],
               },
               {
                 key: '5.2',
-                title: this.$t('message.common.swordghost'),
-                icon: 'pie-chart',
+                title: this.$t('message.nav.swordghost'),
+                icon: 'ordered-list',
                 children: [
                   {
                     key: '5.2.1',
-                    title: this.$t('message.common.swordghost1'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.swordghost1'),
+                    icon: 'caret-right'
                   },
                   {
                     key: '5.2.2',
-                    title: this.$t('message.common.swordghost2'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.swordghost2'),
+                    icon: 'caret-right'
                   },
                   {
                     key: '5.2.3',
-                    title: this.$t('message.common.swordghost3'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.swordghost3'),
+                    icon: 'caret-right'
                   },
                 ]
               },
               {
                 key: '5.3',
-                title: this.$t('message.common.sango'),
-                icon: 'pie-chart',
+                title: this.$t('message.nav.sango'),
+                icon: 'ordered-list',
                 children: [
                   {
                     key: '5.3.1',
-                    title: this.$t('message.common.sango1'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.sango1'),
+                    icon: 'caret-right'
                   },
                   {
                     key: '5.3.2',
-                    title: this.$t('message.common.sango2'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.sango2'),
+                    icon: 'caret-right'
                   },
                   {
                     key: '5.3.3',
-                    title: this.$t('message.common.sango3'),
-                    icon: 'pie-chart'
+                    title: this.$t('message.nav.sango3'),
+                    icon: 'caret-right'
                   },
                 ]
               }
@@ -188,9 +189,28 @@
           },
           {
             key: '6',
-            title: this.$t('message.common.godzilla'),
-            icon: 'pie-chart',
-          }
+            title: this.$t('message.nav.godzilla'),
+            icon: 'ordered-list',
+            children: [
+              {
+                key: '6.1',
+                title: this.$t('message.nav.xplus'),
+                icon: 'caret-right',
+              },
+              {
+                key: '6.2',
+                title: this.$t('message.nav.hako'),
+                icon: 'caret-right',
+              },
+            ]
+          },
+          {
+            key: '3',
+            title: this.$t('message.nav.kachaball'),
+            icon: 'caret-right',
+            href: '/kachaball'
+          },
+
         ],
       };
     },
@@ -203,5 +223,21 @@
 </script>
 
 <style lang="scss" scoped>
+  .sidenav {
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
 
+      width: 100%;
+      min-height: calc(100vh - 60px);
+
+      background: #333;
+    }
+    > button {
+      position: absolute;
+      top: -47px;
+      left: 18px;
+    }
+  }
 </style>

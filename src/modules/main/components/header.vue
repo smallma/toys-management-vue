@@ -25,7 +25,7 @@
   overflow: hidden;
   top: 0;
   width: 100%;
-  height: 120px;
+  height: 60px;
   background-color: #000;
 }
 
@@ -33,7 +33,6 @@
   position: relative;
   top: 0;
   margin: 0;
-  padding-bottom: 52.5%;
   width: 100%;
   height: 0;
 }
@@ -54,16 +53,4 @@
   transform: translateY(-50%);
 }
 
-@media all and (min-width: 1920px) {
-  .header {
-    height: 620px;
-  }
-
-  #kv_banner {
-    margin: 0 auto;
-    padding-bottom: 0;
-    width: 2400px;
-    height: 1260px;
-  }
-}
 </style>

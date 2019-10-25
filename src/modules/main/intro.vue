@@ -19,7 +19,7 @@
   export default {
     name: 'Main',
     metaInfo: {
-      title: 'My Example App',
+      title: 'Toys management',
       titleTemplate: '%s - Yay!',
       meta: [
         {
@@ -43,10 +43,12 @@
   .container {
     position: relative;
     font-size: 0;
+    min-height: calc(100vh - 60px);
   }
 
   .contents {
-    min-height: calc(100vh - 620px);
+    width: calc(100vw - 280px);
+    min-height: calc(100vh - 60px);
   }
 
   .sidenav,
