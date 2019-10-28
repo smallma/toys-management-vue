@@ -8,9 +8,9 @@
         </span>
         <a-input
           v-decorator="[
-            'nickname',
+            'name',
             {
-              rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+              rules: [{ required: true, message: 'Please input toy\'s name!', whitespace: true }],
             },
           ]"
         />
@@ -147,11 +147,28 @@ export default {
   methods: {
     handleSubmit(e) {
       e.preventDefault();
-
       this.form.validateFields((err, values) => {
         if (!err) {
-          console.info('success', values.tags);
+          console.info('click', values.tags);
+
+          let thumbUrls = [];
+
+          for (let i in values.upload) {
+            thumbUrls.push(values.upload[i].thumbUrl);
+          }
+
           window.values = values;
+          const dateNow = new Date();
+          const data = {
+            ...values,
+            qrcode: dateNow.getTime(),
+            created_date: dateNow,
+            tags: values.tags || [],
+            upload: thumbUrls,
+            buyDate: values.buyDate.subtract(10, 'days').calendar()
+          };
+          console.log('addToy data: ', data);
+          this.$store.dispatch('toy/addToy', data);
         }
       });
     },

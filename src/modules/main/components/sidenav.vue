@@ -13,7 +13,7 @@
       <template v-for="item in list">
         <a-menu-item v-if="!item.children" :key="item.key">
           <a-icon :type=item.icon /><span>{{item.title}}</span>
-          <router-link :to=item.href></router-link>
+          <router-link :to="`${item.href || ''}`"></router-link>
         </a-menu-item>
         <sub-menu v-else :menu-info="item" :key="item.key" />
       </template>
@@ -88,12 +88,14 @@
                   {
                     key: '4.1.1',
                     title: this.$t('message.nav.zoidsKotobukiya'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   },
                   {
                     key: '4.1.2',
                     title: this.$t('message.nav.zoidsTT'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   }
                 ],
               },
@@ -112,32 +114,38 @@
                   {
                     key: '5.1.1',
                     title: this.$t('message.nav.mononofu3'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   },
                   {
                     key: '5.1.2',
                     title: this.$t('message.nav.mononofu4'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   },
                   {
                     key: '5.1.3',
                     title: this.$t('message.nav.mononofu5'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   },
                   {
                     key: '5.1.4',
                     title: this.$t('message.nav.mononofu6'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   },
                   {
                     key: '5.1.5',
                     title: this.$t('message.nav.mononofu7'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   },
                   {
                     key: '5.1.6',
                     title: this.$t('message.nav.mononofu8'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   }
                 ],
               },
@@ -149,17 +157,20 @@
                   {
                     key: '5.2.1',
                     title: this.$t('message.nav.swordghost1'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   },
                   {
                     key: '5.2.2',
                     title: this.$t('message.nav.swordghost2'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   },
                   {
                     key: '5.2.3',
                     title: this.$t('message.nav.swordghost3'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   },
                 ]
               },
@@ -171,17 +182,20 @@
                   {
                     key: '5.3.1',
                     title: this.$t('message.nav.sango1'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   },
                   {
                     key: '5.3.2',
                     title: this.$t('message.nav.sango2'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   },
                   {
                     key: '5.3.3',
                     title: this.$t('message.nav.sango3'),
-                    icon: 'caret-right'
+                    icon: 'caret-right',
+                    href: '/zoids',
                   },
                 ]
               }
@@ -196,11 +210,13 @@
                 key: '6.1',
                 title: this.$t('message.nav.xplus'),
                 icon: 'caret-right',
+                href: '/zoids',
               },
               {
                 key: '6.2',
                 title: this.$t('message.nav.hako'),
                 icon: 'caret-right',
+                href: '/zoids',
               },
             ]
           },

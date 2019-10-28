@@ -5,34 +5,60 @@ const toy = {
   namespaced: true,
   state: {
     toys: [],
-    items: []
+    items: [],
+    searchToys: []
   },
   actions: {
     getToys({commit}) {
       db.collection('toys')
-        .get()
-        .then(querySnapshot => {
-          let items = [];
-          querySnapshot.forEach(doc => {
-            console.log(doc.id, doc.data());
+        .orderBy('created_date')
+        .onSnapshot((snapshot) => {
+          let toys = []
+          snapshot.forEach((doc) => {
+            const item = {...doc.data(), id: doc.id};
+            toys.push(item);
+          })
+          commit('setToys', toys);
+        })
+    },
 
-            let item = doc.data();
-            item.id = doc.id;
+    getToysByQrcode({commit}, qrcode) {
+      console.log('qrcode: ', parseInt(qrcode));
+      db.collection('toys')
+        .where("qrcode", "==", parseInt(qrcode))
+        .onSnapshot((snapshot) => {
+          let toys = []
+          snapshot.forEach((doc) => {
+            const item = {...doc.data(), id: doc.id};
+            toys.push(item);
+          })
+          commit('setSearchToys', toys);
+        })
+    },
 
-            items.push(item);
-          });
-
-          commit('setToys', items)
+    addToy({commit}, data) {
+      console.log('data: ', data);
+      db.collection('toys')
+        .add(data)
+        .then((response) => {
+          if (response) {
+            console.log('response: ', response);
+          }
         })
         .catch((error) => {
-          console.log('DB get collection error: ', error);
+          console.log(error);
         })
-    }
+    },
   },
   mutations: {
     setToys(state, toys) {
       state.toys = toys;
-    }
+    },
+
+    setSearchToys(state, toys) {
+      state.searchToys = toys;
+    },
+
   },
   getters: {
     getAll: (state) => {

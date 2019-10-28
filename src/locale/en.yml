@@ -1,9 +1,22 @@
 common:
-  hello: Hey yo
-  home: Home
-  model: Model
-  kachaball: Kachaball
-  weapon: Weapon
+  hello: 你好
+search:
+  clickToOpenCamera: 點擊開啟鏡頭
+  cameraView: 鏡頭畫面
+  inputQrcode: 輸入 QR Code 號碼
+  method1: 方法 1 - 輸入 QR Code
+  method2: 方法 2 - 掃描 QR Code
+nav:
+  search: 搜尋
+  add: 新增
+  home: 首頁
+  model: 模型
+  zoids: 洛伊德
+  zoidsKotobukiya: 壽屋
+  zoidsTT: Takara Tomy
+  hako: 盒玩
+  kachaball: 轉蛋
+  weapon: 武器
   mononofu: Mononofu
   mononofu3: Mononofu 3
   mononofu4: Mononofu 4
@@ -11,6 +24,27 @@ common:
   mononofu6: Mononofu 6
   mononofu7: Mononofu 7
   mononofu8: Mononofu 8
+  swordghost: 真劍鬼
+  swordghost1: 真劍鬼 1
+  swordghost2: 真劍鬼 2
+  swordghost3: 真劍鬼 3
+  sango: 真三國無雙
+  sango1: 真三國無雙 1
+  sango2: 真三國無雙 2
+  sango3: 真三國無雙 3
+  godzilla: 哥吉拉
+  xplus: XPlus
+add:
+  name: 名稱
+  num: 數量
+  rarity: 稀有度
+  buyDate: 購買日期
+  buyPrice: 購買價格
+  currentPrice: 現在價格
+  tags: 標籤
+  uploadImg: 圖片上傳
+  clickToUpload: 點擊上傳圖片
+  add: 新增
 toys:
   buyPrice: 購買價格
   currentPrice: 目前價格

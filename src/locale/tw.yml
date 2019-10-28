@@ -1,5 +1,11 @@
 common:
   hello: 你好
+search:
+  clickToOpenCamera: 點擊開啟鏡頭
+  cameraView: 鏡頭畫面
+  inputQrcode: 輸入 QR Code 號碼
+  method1: 方法 1 - 輸入 QR Code
+  method2: 方法 2 - 掃描 QR Code
 nav:
   search: 搜尋
   add: 新增
