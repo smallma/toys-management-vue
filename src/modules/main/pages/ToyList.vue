@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div class="zone-loading">
+      <a-spin v-if="isLoading" size="large" />
+    </div>
+
     <div class="container_list">
       <div v-for="i in toys">
         {{i}}
@@ -19,15 +23,37 @@
     components: {
       Card,
     },
+    data() {
+      return {
+        isLoading: true
+      }
+    },
     computed: {
       ...mapState('toy', {
           toys: state => state.toys,
         })
     },
     mounted() {
-      this.$store.dispatch('toy/getToys');
+      const tagName = this.$route.params.id;
+      console.log('tagName: ', tagName);
+      this.$store.dispatch('toy/getToys', tagName);
     },
-
+    beforeRouteUpdate (to, from, next) {
+      this.$store.dispatch('toy/getToys', to.params.id);
+    },
+    watch: {
+      qrcode() {
+        this.getCardInfo()
+      },
+      toys() {
+        console.log('this.toys: ', this.toys);
+        if (this.toys.length) {
+          this.isLoading = false;
+        } else {
+          this.isLoading = true;
+        }
+      },
+    },
   }
 </script>
 
@@ -44,4 +70,6 @@
       margin: 0 10px 20px;
     }
   }
+
+
 </style>

@@ -40,15 +40,18 @@
 </script>
 
 <style lang="scss">
+  html {
+    overflow: hidden;
+  }
   .container {
     position: relative;
     font-size: 0;
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - 97px);
   }
 
   .contents {
+    overflow: scroll;
     width: calc(100vw - 280px);
-    min-height: calc(100vh - 60px);
   }
 
   .sidenav,
@@ -56,9 +59,28 @@
     position: relative;
     display: block;
     float: left;
+    height: calc(100vh - 97px);
+
+    overflow: scroll;
   }
 
   .ant-menu-inline {
     width: 280px;
+  }
+
+  .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+    background-color: #616161 !important;
+  }
+
+  .ant-menu-inline .ant-menu-item:first-child {
+    margin-top: 0 !important;
+  }
+
+  .zone-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
   }
 </style>

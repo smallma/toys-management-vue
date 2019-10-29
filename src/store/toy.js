@@ -9,14 +9,17 @@ const toy = {
     searchToys: []
   },
   actions: {
-    getToys({commit}) {
+    getToys({commit}, tagName="") {
       db.collection('toys')
         .orderBy('created_date')
         .onSnapshot((snapshot) => {
           let toys = []
           snapshot.forEach((doc) => {
-            const item = {...doc.data(), id: doc.id};
-            toys.push(item);
+            console.log('doc.tags: ', doc.tags);
+            if (doc.data().tags && doc.data().tags.indexOf(tagName) > -1) {
+              const item = {...doc.data(), id: doc.id};
+              toys.push(item);
+            }
           })
           commit('setToys', toys);
         })
@@ -34,6 +37,10 @@ const toy = {
           })
           commit('setSearchToys', toys);
         })
+    },
+
+    destroyQrcodeToys({commit}) {
+      commit('setSearchToys', []);
     },
 
     addToy({commit}, data) {

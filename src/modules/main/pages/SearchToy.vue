@@ -23,6 +23,10 @@
         {{i}}
         <Card :cardData=i></Card>
       </div>
+
+      <div v-if="isEmpty" class="zone-empty">
+        <a-empty />
+      </div>
     </div>
   </div>
 </template>
@@ -32,7 +36,6 @@
   import { mapState } from 'vuex';
   import { QrcodeStream } from 'vue-qrcode-reader'
   import Card from '../components/card';
-
 
   function debounce(func, wait, immediate) {
     let timeout;
@@ -60,7 +63,8 @@
       return {
         qrcode: '',
         error: '',
-        camera: false
+        camera: false,
+        isEmpty: true
       }
     },
     computed: {
@@ -68,9 +72,20 @@
           searchToys: state => state.searchToys,
         })
     },
+    beforeDestroy () {
+      this.$store.dispatch('toy/destroyQrcodeToys');
+    },
     watch: {
       qrcode() {
         this.getCardInfo()
+      },
+      searchToys() {
+        console.log('this.searchToys: ', this.searchToys);
+        if (this.searchToys.length) {
+          this.isEmpty = false;
+        } else {
+          this.isEmpty = true;
+        }
       }
     },
     methods: {
@@ -85,6 +100,7 @@
       getCardInfo: debounce(function () {
         console.log('changed: ', this.qrcode)
         this.$store.dispatch('toy/getToysByQrcode', this.qrcode);
+
       }, 1000),
       async onInit (promise) {
         try {
@@ -122,7 +138,7 @@
       position: relative;
       text-align: center;
       width: 100%;
-      padding: 15px;
+      padding: 8px;
       font-size: 18px;
 
       background-color: #eee;
@@ -202,5 +218,25 @@
       margin: 0 10px 20px;
     }
   }
+
+  .zone-empty {
+    position: absolute;
+    margin-top: 14% !important;
+
+    font-size: 30px;
+  }
+
+  /deep/ .ant-card {
+    width: 600px !important;
+  }
+
+  /deep/ .ant-card-cover,
+  /deep/ .ant-card-body {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+  }
+
 
 </style>
